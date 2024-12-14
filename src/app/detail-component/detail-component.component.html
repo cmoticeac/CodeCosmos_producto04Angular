@@ -1,0 +1,92 @@
+<div *ngIf="selectedPlayer">
+  <div class="card">
+    <div class="card-header">Detalles del Jugador:</div>
+    <div class="card-body">
+      <div class="player-card">
+        <div class="mb-3 row">
+          <!-- Campos editables -->
+          <label class="col-sm-3 col-form-label">Nombre:</label>
+          <div class="col-sm-9">
+            <input [readonly]="readonly" [(ngModel)]="selectedPlayer.nombre" class="form-control" placeholder="Name" />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Apellido:</label>
+          <div class="col-sm-9">
+            <input [readonly]="readonly" [(ngModel)]="selectedPlayer.apellido" class="form-control"
+              placeholder="Last Name">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Posición:</label>
+          <div class="col-sm-9">
+            <select [disabled]="readonly" [(ngModel)]="selectedPlayer.posicion" class="form-control">
+              <option *ngFor="let position of positions" [value]="position">{{ position }}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Edad:</label>
+          <div class="col-sm-9">
+            <input [readonly]="readonly" [(ngModel)]="selectedPlayer.edad" class="form-control"
+              placeholder="Edad">
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Sexo:</label>
+          <div class="col-sm-9">
+            <input [disabled]="readonly" [(ngModel)]="selectedPlayer.sexo"  class="form-control">
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Altura:</label>
+          <div class="col-sm-9">
+            <input [readonly]="readonly" [(ngModel)]="selectedPlayer.altura" class="form-control"
+              placeholder="Altura">
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Partidos:</label>
+          <div class="col-sm-9">
+            <input [readonly]="readonly" [(ngModel)]="selectedPlayer.partidos" class="form-control"
+              placeholder="Partidos">
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Imagen 1 URL:</label>
+          <div class="col-sm-9">
+            <input type="file" class="form-control" (change)="onImageUpload($event)" />
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Imagen 2 URL:</label>
+          <div class="col-sm-9">
+            <select [disabled]="readonly" [(ngModel)]="selectedPlayer.img2" class="form-control">
+              <option *ngFor="let img of images" [value]="img.link">{{ img.name }}</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Subida de video -->
+        <div class="mb-3 row" *ngIf="!readonly">
+          <label class="col-sm-3 col-form-label">Subir Video:</label>
+          <div class="col-sm-9">
+            <input type="file" class="form-control" (change)="onVideoUpload($event)" />
+          </div>
+        </div>
+
+                  <!-- Botón de guardar -->
+        <!-- Selección para editar -->
+        <button *ngIf="readonly" type="button" class="btn btn-success" (click)="toggleEdit()">Editar</button>
+        <button *ngIf="!readonly" type="button" class="btn btn-success" (click)="savePlayer()">Guardar</button>
+        <button type="button" class="btn btn-success" (click)="closeDetail()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
