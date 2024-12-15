@@ -14,9 +14,9 @@ import {
   setLogLevel
 } from "./chunk-UP3K6RND.js";
 import "./chunk-CHNHOZ7B.js";
-import "./chunk-3IMWLXIE.js";
 import "./chunk-CEXP5ZO2.js";
 import "./chunk-3COQGF7T.js";
+import "./chunk-3IMWLXIE.js";
 import {
   DEFAULT_ENTRY_NAME,
   FirebaseError,

@@ -13,7 +13,6 @@ import {
   ɵgetDefaultInstanceOf,
   ɵzoneWrap
 } from "./chunk-CHNHOZ7B.js";
-import "./chunk-3IMWLXIE.js";
 import {
   InjectionToken,
   Injector,
@@ -39,6 +38,7 @@ import {
   startWith,
   timer
 } from "./chunk-3COQGF7T.js";
+import "./chunk-3IMWLXIE.js";
 import {
   Component,
   FirebaseError,

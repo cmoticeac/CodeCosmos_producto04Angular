@@ -1,7 +1,6 @@
 import {
   VERSION as VERSION2
 } from "./chunk-CHNHOZ7B.js";
-import "./chunk-3IMWLXIE.js";
 import {
   Inject,
   InjectionToken,
@@ -17,6 +16,7 @@ import {
   ɵɵinject
 } from "./chunk-CEXP5ZO2.js";
 import "./chunk-3COQGF7T.js";
+import "./chunk-3IMWLXIE.js";
 import {
   Component,
   DEFAULT_ENTRY_NAME,

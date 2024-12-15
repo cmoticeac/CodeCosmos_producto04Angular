@@ -1,47 +1,4 @@
 import {
-  AuthInstances
-} from "./chunk-NMKX6DIB.js";
-import {
-  FirebaseApp,
-  FirebaseApps
-} from "./chunk-UP3K6RND.js";
-import {
-  VERSION,
-  ɵAngularFireSchedulers,
-  ɵAppCheckInstances,
-  ɵgetAllInstancesOf,
-  ɵgetDefaultInstanceOf,
-  ɵzoneWrap
-} from "./chunk-CHNHOZ7B.js";
-import "./chunk-3IMWLXIE.js";
-import {
-  InjectionToken,
-  Injector,
-  NgModule,
-  NgZone,
-  Optional,
-  makeEnvironmentProviders,
-  setClassMetadata,
-  ɵɵdefineInjector,
-  ɵɵdefineNgModule
-} from "./chunk-CEXP5ZO2.js";
-import {
-  Observable,
-  concatMap,
-  delay,
-  distinct,
-  distinctUntilChanged,
-  from,
-  map,
-  merge,
-  of,
-  scan,
-  skipWhile,
-  switchMap,
-  timer,
-  withLatestFrom
-} from "./chunk-3COQGF7T.js";
-import {
   DataSnapshot,
   OnDisconnect,
   QueryConstraint,
@@ -96,6 +53,49 @@ import {
   validatePathString,
   validateWritablePath
 } from "./chunk-4JJP5BI7.js";
+import {
+  AuthInstances
+} from "./chunk-NMKX6DIB.js";
+import {
+  FirebaseApp,
+  FirebaseApps
+} from "./chunk-UP3K6RND.js";
+import {
+  VERSION,
+  ɵAngularFireSchedulers,
+  ɵAppCheckInstances,
+  ɵgetAllInstancesOf,
+  ɵgetDefaultInstanceOf,
+  ɵzoneWrap
+} from "./chunk-CHNHOZ7B.js";
+import {
+  InjectionToken,
+  Injector,
+  NgModule,
+  NgZone,
+  Optional,
+  makeEnvironmentProviders,
+  setClassMetadata,
+  ɵɵdefineInjector,
+  ɵɵdefineNgModule
+} from "./chunk-CEXP5ZO2.js";
+import {
+  Observable,
+  concatMap,
+  delay,
+  distinct,
+  distinctUntilChanged,
+  from,
+  map,
+  merge,
+  of,
+  scan,
+  skipWhile,
+  switchMap,
+  timer,
+  withLatestFrom
+} from "./chunk-3COQGF7T.js";
+import "./chunk-3IMWLXIE.js";
 import {
   registerVersion
 } from "./chunk-5IYD3MR6.js";

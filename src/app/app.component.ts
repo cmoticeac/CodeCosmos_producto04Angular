@@ -13,6 +13,7 @@ import { getDatabase, ref, onValue } from "firebase/database";
 import { FirebaseService } from './firebase.service';
 import { get } from "firebase/database";
 import { NotificationService } from '../app/services/notificacion.service';
+import { getMessaging, getToken } from 'firebase/messaging'; // Importar FCM
 
 @Component({
   selector: 'app-root',
@@ -35,6 +36,7 @@ export class AppComponent implements OnInit {
   playersData: any[] = [];
   app = initializeApp(firebaseConfig);
   db: any;
+  fcmToken: string | null = null; // Para almacenar el token
 
   constructor(private notificationService: NotificationService) {
     this.db = getDatabase(this.app);
@@ -45,7 +47,11 @@ export class AppComponent implements OnInit {
     // Solicitar permisos para notificaciones y escuchar mensajes
     this.notificationService.requestPermission();
     this.notificationService.listenForMessages();
+
+    // Obtener el token FCM al iniciar
+    this.getFCMToken();
   }
+
   generarConexion(): void {
     const playersRef = ref(this.db, 'jugadores');
     get(playersRef)
@@ -61,6 +67,24 @@ export class AppComponent implements OnInit {
       })
       .catch((error) => {
         console.error("Error al obtener datos de jugadores:", error);
+      });
+  }
+
+  // Función para obtener el token FCM
+  getFCMToken() {
+    const messaging = getMessaging();
+    // Asegúrate de reemplazar 'TU_CLAVE_VAPID' con tu clave VAPID obtenida desde Firebase
+    getToken(messaging, { vapidKey: 'BCVruXR0pTgIqN7zIYCY_-ik6kTSuBOEOUVSBN-ChejltrmRAXN7_0SyZkMUjvHk6qbx5y39rYiwG9bJs3D9JBk' })
+      .then((currentToken) => {
+        if (currentToken) {
+          this.fcmToken = currentToken; // Guarda el token
+          console.log('Token de FCM obtenido:', currentToken); // Puedes usar este token para enviar mensajes
+        } else {
+          console.log('No se pudo obtener el token');
+        }
+      })
+      .catch((err) => {
+        console.log('Error al obtener el token FCM:', err);
       });
   }
 }
