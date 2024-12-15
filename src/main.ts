@@ -8,6 +8,7 @@ import { firebaseConfig } from './environments/firebase.config';
 import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { provideMessaging, getMessaging } from '@angular/fire/messaging';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -16,6 +17,7 @@ bootstrapApplication(AppComponent, {
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    provideMessaging(() => getMessaging()),
     { provide: FIREBASE_OPTIONS, useValue: firebaseConfig }
   ]
 }).catch(err => console.error(err));

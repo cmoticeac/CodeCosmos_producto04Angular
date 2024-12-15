@@ -24,8 +24,8 @@
               "src/assets",
               "src/public/favicon.ico",
               "src/assets/CodeCosmos.png",
-              "src/data/datos-equipos.json"
-
+              "src/data/datos-equipos.json",
+              "src/firebase-messaging-sw.js"
             ],            
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",

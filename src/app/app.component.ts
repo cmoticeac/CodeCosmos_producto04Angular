@@ -13,6 +13,7 @@ import { firebaseConfig } from "../environments/firebase.config";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { FirebaseService } from './firebase.service';
 import { get } from "firebase/database";
+import { NotificationService } from '../app/services/notificacion.service';
 
 @Component({
   selector: 'app-root',
@@ -36,12 +37,16 @@ export class AppComponent implements OnInit {
   app = initializeApp(firebaseConfig);
   db: any;
 
-  constructor() {
+  constructor(private notificationService: NotificationService) {
     this.db = getDatabase(this.app);
     this.generarConexion();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // Solicitar permisos para notificaciones y escuchar mensajes
+    this.notificationService.requestPermission();
+    this.notificationService.listenForMessages();
+  }
 
   generarConexion(): void {
     const playersRef = ref(this.db, 'jugadores');
