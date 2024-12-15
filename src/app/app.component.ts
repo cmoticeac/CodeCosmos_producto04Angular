@@ -7,12 +7,12 @@ import { MediaComponent } from './media-component/media-component.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CommonModule } from '@angular/common';
 import { PLAYER_DATA } from '../data/data';
-
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "../environments/firebase.config";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { FirebaseService } from './firebase.service';
 import { get } from "firebase/database";
+import { NotificationService } from '../app/services/notification.service';
 
 @Component({
   selector: 'app-root',
@@ -36,13 +36,17 @@ export class AppComponent implements OnInit {
   app = initializeApp(firebaseConfig);
   db: any;
 
-  constructor() {
+  constructor(private notificationService: NotificationService) {
     this.db = getDatabase(this.app);
     this.generarConexion();
   }
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    // Solicitar permisos para notificaciones y escuchar mensajes
+    this.notificationService.requestPermission();
+    this.notificationService.listenForMessages();
+  }
+  
   generarConexion(): void {
     const playersRef = ref(this.db, 'jugadores');
     get(playersRef)
