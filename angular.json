@@ -23,6 +23,7 @@
             "assets": [
               "src/assets",
               "src/public/favicon.ico",
+              "src/firebase-messaging-sw.js",
               "src/assets/CodeCosmos.png",
               "src/data/datos-equipos.json",
               "src/firebase-messaging-sw.js"
