@@ -27,7 +27,7 @@ export class NotificationService {
   private async getDeviceToken(messaging: any): Promise<void> {
     try {
       const token = await getToken(messaging, {
-        vapidKey: 'TU_CLAVE_VAPID', // Sustituye con tu clave VAPID de Firebase Cloud Messaging
+        vapidKey: 'TBCVruXR0pTgIqN7zIYCY_-ik6kTSuBOEOUVSBN-ChejltrmRAXN7_0SyZkMUjvHk6qbx5y39rYiwG9bJs3D9JBk', // Sustituye con tu clave VAPID de Firebase Cloud Messaging
       });
       if (token) {
         console.log('Token del dispositivo:', token);
