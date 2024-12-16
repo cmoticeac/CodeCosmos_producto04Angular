@@ -1,21 +1,6 @@
 import {
   VERSION as VERSION2
-} from "./chunk-CHNHOZ7B.js";
-import {
-  Inject,
-  InjectionToken,
-  NgModule,
-  NgZone,
-  Optional,
-  PLATFORM_ID,
-  VERSION,
-  isDevMode,
-  setClassMetadata,
-  ɵɵdefineInjector,
-  ɵɵdefineNgModule,
-  ɵɵinject
-} from "./chunk-CEXP5ZO2.js";
-import "./chunk-3COQGF7T.js";
+} from "./chunk-JEHFFJ5Z.js";
 import "./chunk-3IMWLXIE.js";
 import {
   Component,
@@ -37,6 +22,21 @@ import {
   registerVersion,
   setLogLevel
 } from "./chunk-5IYD3MR6.js";
+import {
+  Inject,
+  InjectionToken,
+  NgModule,
+  NgZone,
+  Optional,
+  PLATFORM_ID,
+  VERSION,
+  isDevMode,
+  setClassMetadata,
+  ɵɵdefineInjector,
+  ɵɵdefineNgModule,
+  ɵɵinject
+} from "./chunk-CEXP5ZO2.js";
+import "./chunk-3COQGF7T.js";
 import "./chunk-35ENWJA4.js";
 
 // node_modules/@firebase/app-compat/dist/esm/index.esm2017.js

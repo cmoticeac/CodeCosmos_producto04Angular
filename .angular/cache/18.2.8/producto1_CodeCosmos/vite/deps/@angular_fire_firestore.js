@@ -1,10 +1,10 @@
 import {
   AuthInstances
-} from "./chunk-NMKX6DIB.js";
+} from "./chunk-JETZGE5G.js";
 import {
   FirebaseApp,
   FirebaseApps
-} from "./chunk-UP3K6RND.js";
+} from "./chunk-RDQ3UJBU.js";
 import {
   VERSION,
   ɵAngularFireSchedulers,
@@ -12,7 +12,27 @@ import {
   ɵgetAllInstancesOf,
   ɵgetDefaultInstanceOf,
   ɵzoneWrap
-} from "./chunk-CHNHOZ7B.js";
+} from "./chunk-JEHFFJ5Z.js";
+import "./chunk-3IMWLXIE.js";
+import {
+  Component,
+  FirebaseError,
+  LogLevel,
+  Logger,
+  SDK_VERSION,
+  _getProvider,
+  _registerComponent,
+  _removeServiceInstance,
+  createMockUserToken,
+  deepEqual,
+  getApp,
+  getDefaultEmulatorHostnameAndPort,
+  getModularInstance,
+  getUA,
+  isIndexedDBAvailable,
+  isSafari,
+  registerVersion
+} from "./chunk-5IYD3MR6.js";
 import {
   InjectionToken,
   Injector,
@@ -38,26 +58,6 @@ import {
   startWith,
   timer
 } from "./chunk-3COQGF7T.js";
-import "./chunk-3IMWLXIE.js";
-import {
-  Component,
-  FirebaseError,
-  LogLevel,
-  Logger,
-  SDK_VERSION,
-  _getProvider,
-  _registerComponent,
-  _removeServiceInstance,
-  createMockUserToken,
-  deepEqual,
-  getApp,
-  getDefaultEmulatorHostnameAndPort,
-  getModularInstance,
-  getUA,
-  isIndexedDBAvailable,
-  isSafari,
-  registerVersion
-} from "./chunk-5IYD3MR6.js";
 import {
   __async,
   __superGet

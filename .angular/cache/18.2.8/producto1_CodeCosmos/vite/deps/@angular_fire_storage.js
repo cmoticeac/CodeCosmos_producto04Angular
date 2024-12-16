@@ -1,10 +1,10 @@
 import {
   AuthInstances
-} from "./chunk-NMKX6DIB.js";
+} from "./chunk-JETZGE5G.js";
 import {
   FirebaseApp,
   FirebaseApps
-} from "./chunk-UP3K6RND.js";
+} from "./chunk-RDQ3UJBU.js";
 import {
   VERSION,
   ɵAngularFireSchedulers,
@@ -12,7 +12,20 @@ import {
   ɵgetAllInstancesOf,
   ɵgetDefaultInstanceOf,
   ɵzoneWrap
-} from "./chunk-CHNHOZ7B.js";
+} from "./chunk-JEHFFJ5Z.js";
+import "./chunk-3IMWLXIE.js";
+import {
+  Component,
+  FirebaseError,
+  SDK_VERSION,
+  _getProvider,
+  _registerComponent,
+  createMockUserToken,
+  getApp,
+  getDefaultEmulatorHostnameAndPort,
+  getModularInstance,
+  registerVersion
+} from "./chunk-5IYD3MR6.js";
 import {
   InjectionToken,
   Injector,
@@ -32,19 +45,6 @@ import {
   map,
   timer
 } from "./chunk-3COQGF7T.js";
-import "./chunk-3IMWLXIE.js";
-import {
-  Component,
-  FirebaseError,
-  SDK_VERSION,
-  _getProvider,
-  _registerComponent,
-  createMockUserToken,
-  getApp,
-  getDefaultEmulatorHostnameAndPort,
-  getModularInstance,
-  registerVersion
-} from "./chunk-5IYD3MR6.js";
 import {
   __async
 } from "./chunk-35ENWJA4.js";

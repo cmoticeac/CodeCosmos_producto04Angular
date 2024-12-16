@@ -55,11 +55,11 @@ import {
 } from "./chunk-4JJP5BI7.js";
 import {
   AuthInstances
-} from "./chunk-NMKX6DIB.js";
+} from "./chunk-JETZGE5G.js";
 import {
   FirebaseApp,
   FirebaseApps
-} from "./chunk-UP3K6RND.js";
+} from "./chunk-RDQ3UJBU.js";
 import {
   VERSION,
   ɵAngularFireSchedulers,
@@ -67,7 +67,11 @@ import {
   ɵgetAllInstancesOf,
   ɵgetDefaultInstanceOf,
   ɵzoneWrap
-} from "./chunk-CHNHOZ7B.js";
+} from "./chunk-JEHFFJ5Z.js";
+import "./chunk-3IMWLXIE.js";
+import {
+  registerVersion
+} from "./chunk-5IYD3MR6.js";
 import {
   InjectionToken,
   Injector,
@@ -95,10 +99,6 @@ import {
   timer,
   withLatestFrom
 } from "./chunk-3COQGF7T.js";
-import "./chunk-3IMWLXIE.js";
-import {
-  registerVersion
-} from "./chunk-5IYD3MR6.js";
 import "./chunk-35ENWJA4.js";
 
 // node_modules/rxfire/database/index.esm.js
