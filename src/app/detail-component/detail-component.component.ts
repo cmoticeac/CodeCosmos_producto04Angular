@@ -47,21 +47,21 @@ constructor(private firebaseService: FirebaseService) {}
   }
 
   onImageUpload(event: any): void {
-    const file = event.target.files[0];
-    if (file && this.selectedPlayer.firestoreId) {
-      this.firebaseService.uploadFileAndUpdateDatabase(this.selectedPlayer.firestoreId, file, 'image')
-        .then(() => console.log('Imagen actualizada correctamente.'))
-        .catch(error => console.error('Error al subir la imagen:', error));
-    }
+    // const file = event.target.files[0];
+    // if (file && this.selectedPlayer.firestoreId) {
+    //   this.firebaseService.uploadFileAndUpdateDatabase(this.selectedPlayer.firestoreId, file, 'image')
+    //     .then(() => console.log('Imagen actualizada correctamente.'))
+    //     .catch(error => console.error('Error al subir la imagen:', error));
+    // }
   }
 
   onVideoUpload(event: any): void {
-    const file = event.target.files[0];
-    if (file && this.selectedPlayer.firestoreId) {
-      this.firebaseService.uploadFileAndUpdateDatabase(this.selectedPlayer.firestoreId, file, 'video')
-        .then(() => console.log('Video actualizado correctamente.'))
-        .catch(error => console.error('Error al subir el video:', error));
-    }
+    // const file = event.target.files[0];
+    // if (file && this.selectedPlayer.firestoreId) {
+    //   this.firebaseService.uploadFileAndUpdateDatabase(this.selectedPlayer.firestoreId, file, 'video')
+    //     .then(() => console.log('Video actualizado correctamente.'))
+    //     .catch(error => console.error('Error al subir el video:', error));
+    // }
   }
   
   closeDetail() {
