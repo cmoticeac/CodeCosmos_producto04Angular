@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "module": "ESNext",                   // Cambiado de NodeNext a ESNext
+    "moduleResolution": "node",  
+    "module": "CommonJS",                   // Cambiado de NodeNext a ESNext
     "esModuleInterop": true,
-    "moduleResolution": "Node",           // Cambiado de nodenext a Node
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "outDir": "lib",
     "sourceMap": true,
     "strict": true,
-    "target": "ES2017",                   // Puede actualizarse a "ESNext" si es compatible
-    "lib": ["esnext"]                     // Agregado para incluir las bibliotecas más recientes
+    "target": "ES2020",                   // Puede actualizarse a "ESNext" si es compatible
+    "lib": ["ES2020"]                     // Agregado para incluir las bibliotecas más recientes
   },
   "compileOnSave": true,
   "include": [
-    "src"
+    "src", // Incluye todos los archivos en src
+    ".eslintrc.js" // Incluye el archivo .eslintrc.js
   ]
 }

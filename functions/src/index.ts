@@ -1,16 +1,24 @@
-import {onValueCreated} from "firebase-functions/v2/database";
+import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
 
-// Inicializar Firebase Admin SDK
 admin.initializeApp();
 
-// Función para manejar la creación de un nuevo usuario en la base de datos
-export const onUserCreate = onValueCreated("/users/{userId}", (event) => {
-  const userData = event.data.val(); // Obtener los datos del nuevo usuario
+exports.sendNotificationOnWrite = functions.database.ref("/users/{userId}")
+  .onWrite(async (change: functions.Change<functions.database.DataSnapshot>) => {
+    const afterData = change.after.val();
 
-  console.log("Nuevo usuario creado:", userData);
+    const payload = {
+      notification: {
+        title: "Actualización en la Base de Datos",
+        body: `Se actualizó el usuario: ${afterData?.name || "Desconocido"}`,
+      },
+      topic: "general",
+    };
 
-  // Lógica adicional como enviar notificaciones o realizar más acciones aquí
-
-  return null;
-});
+    try {
+      await admin.messaging().send(payload);
+      console.log("Notificación enviada con éxito.");
+    } catch (error) {
+      console.error("Error al enviar la notificación:", error);
+    }
+  });
