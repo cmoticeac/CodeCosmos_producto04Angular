@@ -25,9 +25,6 @@
     "bootstrap-icons": "^1.11.3",
     "expo": "^52.0.18",
     "firebase": "^10.14.1",
-    "firebase-admin": "^13.0.1",
-    "firebase-function": "^1.4.121",
-    "firebase-functions": "^6.1.2",
     "long": "^4.0.0",
     "producto1-code-cosmos": "file:",
     "rxjs": "~7.8.0",
@@ -45,6 +42,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "^5.5.4"
+    "typescript": "5.5"
   }
 }

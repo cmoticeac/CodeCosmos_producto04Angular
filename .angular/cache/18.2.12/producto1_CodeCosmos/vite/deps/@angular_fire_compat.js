@@ -1,7 +1,20 @@
 import {
   VERSION as VERSION2
-} from "./chunk-6YNY5HP2.js";
+} from "./chunk-TVT2ODOZ.js";
 import "./chunk-2IQ2WWR6.js";
+import {
+  DEFAULT_ENTRY_NAME,
+  SDK_VERSION,
+  _addComponent,
+  _addOrOverwriteComponent,
+  _registerComponent,
+  deleteApp,
+  index_esm2017_exports,
+  initializeApp,
+  onLog,
+  registerVersion,
+  setLogLevel
+} from "./chunk-CMZFNWV3.js";
 import {
   Inject,
   InjectionToken,
@@ -17,19 +30,6 @@ import {
   ɵɵinject
 } from "./chunk-4ILGPR6T.js";
 import "./chunk-2QQLL3PY.js";
-import {
-  DEFAULT_ENTRY_NAME,
-  SDK_VERSION,
-  _addComponent,
-  _addOrOverwriteComponent,
-  _registerComponent,
-  deleteApp,
-  index_esm2017_exports,
-  initializeApp,
-  onLog,
-  registerVersion,
-  setLogLevel
-} from "./chunk-CMZFNWV3.js";
 import "./chunk-35ENWJA4.js";
 
 // node_modules/@firebase/app-compat/node_modules/@firebase/util/dist/index.esm2017.js

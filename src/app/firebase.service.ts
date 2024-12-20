@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collection, collectionData, addDoc, doc, setDoc, updateDoc, deleteDoc } from '@angular/fire/firestore';
 import { Database, onValue, push, ref, remove, set, update } from '@angular/fire/database';
-//import { Storage, ref as storageRef, uploadBytes, getDownloadURL } from '@angular/fire/storage';
+import { Storage, ref as storageRef, uploadBytes, getDownloadURL } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { Player } from '../app/models/players.model';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
