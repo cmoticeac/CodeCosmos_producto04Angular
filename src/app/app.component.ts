@@ -42,6 +42,9 @@ export class AppComponent implements OnInit {
 
     // Configurar notificaciones push
     this.setupPushNotifications();
+
+    // Escuchar cambios en jugadores para enviar notificaciones
+    this.firebaseService.listenForPlayerChanges();
   }
 
   /**

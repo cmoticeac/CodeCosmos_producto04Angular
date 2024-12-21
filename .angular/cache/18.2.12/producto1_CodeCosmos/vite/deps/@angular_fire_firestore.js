@@ -1,10 +1,10 @@
 import {
   AuthInstances
-} from "./chunk-I4FDBX5V.js";
+} from "./chunk-CUTVASPR.js";
 import {
   FirebaseApp,
   FirebaseApps
-} from "./chunk-GBTQPIWO.js";
+} from "./chunk-F5XGSF6E.js";
 import {
   VERSION,
   ɵAngularFireSchedulers,
@@ -12,16 +12,7 @@ import {
   ɵgetAllInstancesOf,
   ɵgetDefaultInstanceOf,
   ɵzoneWrap
-} from "./chunk-TVT2ODOZ.js";
-import "./chunk-2IQ2WWR6.js";
-import {
-  SDK_VERSION,
-  _getProvider,
-  _registerComponent,
-  _removeServiceInstance,
-  getApp,
-  registerVersion
-} from "./chunk-CMZFNWV3.js";
+} from "./chunk-6YNY5HP2.js";
 import {
   InjectionToken,
   Injector,
@@ -47,6 +38,15 @@ import {
   startWith,
   timer
 } from "./chunk-2QQLL3PY.js";
+import "./chunk-2IQ2WWR6.js";
+import {
+  SDK_VERSION,
+  _getProvider,
+  _registerComponent,
+  _removeServiceInstance,
+  getApp,
+  registerVersion
+} from "./chunk-CMZFNWV3.js";
 import {
   __async,
   __superGet

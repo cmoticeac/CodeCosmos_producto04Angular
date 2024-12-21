@@ -1,7 +1,4 @@
 import {
-  getApps
-} from "./chunk-CMZFNWV3.js";
-import {
   Injectable,
   NgZone,
   Version,
@@ -17,6 +14,9 @@ import {
   subscribeOn,
   tap
 } from "./chunk-2QQLL3PY.js";
+import {
+  getApps
+} from "./chunk-CMZFNWV3.js";
 
 // node_modules/@angular/fire/fesm2022/angular-fire.mjs
 var VERSION = new Version("ANGULARFIRE2_VERSION");
@@ -227,4 +227,4 @@ export {
   ɵAngularFireSchedulers,
   ɵzoneWrap
 };
-//# sourceMappingURL=chunk-TVT2ODOZ.js.map
+//# sourceMappingURL=chunk-6YNY5HP2.js.map

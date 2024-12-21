@@ -2,17 +2,7 @@ import {
   VERSION as VERSION2,
   ɵAngularFireSchedulers,
   ɵzoneWrap
-} from "./chunk-TVT2ODOZ.js";
-import {
-  deleteApp,
-  getApp,
-  getApps,
-  initializeApp,
-  initializeServerApp,
-  onLog,
-  registerVersion,
-  setLogLevel
-} from "./chunk-CMZFNWV3.js";
+} from "./chunk-6YNY5HP2.js";
 import {
   Inject,
   InjectionToken,
@@ -34,6 +24,16 @@ import {
   from,
   timer
 } from "./chunk-2QQLL3PY.js";
+import {
+  deleteApp,
+  getApp,
+  getApps,
+  initializeApp,
+  initializeServerApp,
+  onLog,
+  registerVersion,
+  setLogLevel
+} from "./chunk-CMZFNWV3.js";
 
 // node_modules/@angular/fire/fesm2022/angular-fire-app.mjs
 var FirebaseApp = class {
@@ -136,4 +136,4 @@ export {
   registerVersion2 as registerVersion,
   setLogLevel2 as setLogLevel
 };
-//# sourceMappingURL=chunk-GBTQPIWO.js.map
+//# sourceMappingURL=chunk-F5XGSF6E.js.map

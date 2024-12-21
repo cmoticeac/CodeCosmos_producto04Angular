@@ -1,20 +1,12 @@
 import {
   FirebaseApp
-} from "./chunk-GBTQPIWO.js";
+} from "./chunk-F5XGSF6E.js";
 import {
   VERSION,
   ɵgetAllInstancesOf,
   ɵgetDefaultInstanceOf,
   ɵzoneWrap
-} from "./chunk-TVT2ODOZ.js";
-import {
-  SDK_VERSION,
-  _getProvider,
-  _isFirebaseServerApp,
-  _registerComponent,
-  getApp,
-  registerVersion
-} from "./chunk-CMZFNWV3.js";
+} from "./chunk-6YNY5HP2.js";
 import {
   InjectionToken,
   NgModule,
@@ -33,6 +25,14 @@ import {
   switchMap,
   timer
 } from "./chunk-2QQLL3PY.js";
+import {
+  SDK_VERSION,
+  _getProvider,
+  _isFirebaseServerApp,
+  _registerComponent,
+  getApp,
+  registerVersion
+} from "./chunk-CMZFNWV3.js";
 import {
   __async,
   __superGet
@@ -8708,4 +8708,4 @@ rxfire/auth/index.esm.js:
    * limitations under the License.
    *)
 */
-//# sourceMappingURL=chunk-I4FDBX5V.js.map
+//# sourceMappingURL=chunk-CUTVASPR.js.map

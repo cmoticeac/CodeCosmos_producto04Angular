@@ -39,6 +39,12 @@ export class PlayersComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    // if (Notification.permission !== 'granted' && Notification.permission !== 'denied') {
+    //   Notification.requestPermission().then(permission => {
+    //     console.log('Permiso de notificación:', permission);
+    //   });
+    // }
+
     this.loadPlayers(); // Carga los datos al inicializar el componente
   }
 
@@ -106,6 +112,15 @@ export class PlayersComponent implements OnInit, OnChanges {
       console.log('Jugador añadido exitosamente');
       this.loadPlayers(); // Recargar lista
       this.showNewPlayerForm = false;
+
+      // Enviar la notificación
+      // if (Notification.permission === 'granted') {
+      //   new Notification('Jugador añadido', {
+      //     body: `Se agregó a ${this.newPlayer.nombre} ${this.newPlayer.apellido} exitosamente.`,
+      //     icon: 'ruta/a/tu/icono.png' // Opcional: Cambia por la URL de tu icono
+      //   });
+      // }
+
     }).catch(error => {
       console.error('Error al añadir jugador:', error);
     });
@@ -136,6 +151,14 @@ export class PlayersComponent implements OnInit, OnChanges {
     this.firebaseService.updatePlayer(player).then(() => {
       this.loadPlayers(); // Recargar lista de jugadores después de actualizar
       this.deselectPlayer();
+
+      // Enviar notificación
+      // if (Notification.permission === 'granted') {
+      //   new Notification('Jugador actualizado', {
+      //     body: `Se actualizó la información de ${player.nombre} ${player.apellido}.`,
+      //     icon: 'ruta/a/tu/icono.png' // Opcional: Cambia por la URL de tu icono
+      //   });
+      // }
     });
   }
 

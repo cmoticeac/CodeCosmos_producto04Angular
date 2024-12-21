@@ -8,7 +8,7 @@ import {
 import {
   FirebaseApp,
   FirebaseApps
-} from "./chunk-GBTQPIWO.js";
+} from "./chunk-F5XGSF6E.js";
 import {
   VERSION,
   ɵAngularFireSchedulers,
@@ -16,11 +16,7 @@ import {
   ɵgetDefaultInstanceOf,
   ɵisSupportedError,
   ɵzoneWrap
-} from "./chunk-TVT2ODOZ.js";
-import "./chunk-2IQ2WWR6.js";
-import {
-  registerVersion
-} from "./chunk-CMZFNWV3.js";
+} from "./chunk-6YNY5HP2.js";
 import {
   APP_INITIALIZER,
   InjectionToken,
@@ -39,6 +35,10 @@ import {
   from,
   timer
 } from "./chunk-2QQLL3PY.js";
+import "./chunk-2IQ2WWR6.js";
+import {
+  registerVersion
+} from "./chunk-CMZFNWV3.js";
 import "./chunk-35ENWJA4.js";
 
 // node_modules/@angular/fire/fesm2022/angular-fire-messaging.mjs

@@ -44,20 +44,16 @@ export class FirebaseService {
     const newPlayerRef = push(playersRef); // Crea un nodo único
     await set(newPlayerRef, player); // Guarda los datos del jugador
   }  
-  
+ 
   // Actualizar un jugador existente
   async updatePlayer(player: Player): Promise<void> {
     if (!player.firestoreId) {
       console.error('firestoreId es undefined');
       return;
     }
-    // Referencia al nodo existente
-  const playerRef = ref(this.db, `${this.collectionPath}/${player.firestoreId}`);
-  // Actualizar el nodo existente
-  await set(playerRef, player);
+    const playerRef = ref(this.db, `${this.collectionPath}/${player.firestoreId}`);
+    await set(playerRef, player);
   }
-  
-  
 
   // Eliminar un jugador
   async deletePlayer(playerId: string): Promise<void> {
@@ -68,29 +64,62 @@ export class FirebaseService {
     const playerRef = ref(this.db, `${this.collectionPath}/${playerId}`);
     await remove(playerRef);
   }  
-  
+
   async uploadFileAndUpdateDatabase(playerId: string, file: File, type: 'image' | 'video'): Promise<void> {
-    //try {
-     
-      //const path = type === 'image' ? 'assets/imagenes' : 'assets/videos';
-      //const fileStorageRef = storageRef(this.storage, `${path}/${file.name}`);
- 
-      // Subir archivo al Storage
-      //await uploadBytes(fileStorageRef, file);
-      //const downloadURL = await getDownloadURL(fileStorageRef);
-      //console.log(`Archivo subido: ${downloadURL}`);
-  
-      // Actualizar la URL en Realtime Database
-      //const playerDbRef = ref(this.db, `jugadores/${playerId}`);
-      //const updateData = type === 'image' ? { img1: downloadURL } : { video: downloadURL };
-  
-      //await update(playerDbRef, updateData);
-      //console.log(`URL actualizada en la base de datos.`);
-    //} catch (error) {
-      //console.error('Error al subir archivo:', error);
-      //throw error;
-    //}
-     
+    // Lógica para subir archivos (sin modificar, ya que está comentada en tu código).
   }
 
+
+  // Escuchar cambios en la base de datos y distinguir entre añadir y modificar
+  listenForPlayerChanges() {
+    const playersRef = ref(this.db, this.collectionPath);
+
+    // Mantener un estado local de jugadores
+    let currentPlayers: Record<string, any> = {};
+
+    onValue(playersRef, (snapshot) => {
+      const newData = snapshot.val();
+      console.log('Datos cambiados en jugadores:', newData);
+
+      // Convertir los nuevos datos en un objeto para comparación
+      const newPlayers = newData || {};
+
+      // Comparar los nuevos datos con los actuales
+      for (const playerId in newPlayers) {
+        if (!currentPlayers[playerId]) {
+          // Si el jugador no existía antes, es un nuevo jugador
+          const newPlayer = newPlayers[playerId];
+          this.sendNotification(
+            'Nuevo jugador añadido',
+            `Se ha añadido un nuevo jugador: ${newPlayer.nombre} ${newPlayer.apellido}`
+          );
+        } else if (
+          JSON.stringify(currentPlayers[playerId]) !== JSON.stringify(newPlayers[playerId])
+        ) {
+          // Si el jugador existía pero cambió, es una modificación
+          const updatedPlayer = newPlayers[playerId];
+          this.sendNotification(
+            'Jugador modificado',
+            `Se ha actualizado el jugador: ${updatedPlayer.nombre} ${updatedPlayer.apellido}`
+          );
+        }
+      }
+
+      // Actualizar el estado local
+      currentPlayers = newPlayers;
+    });
+  }
+
+
+  // Enviar notificación push
+  sendNotification(title: string, body: string) {
+    if (Notification.permission === 'granted') {
+      new Notification(title, {
+        body: body,
+        icon: 'ruta/a/tu/icono.png', // Opcional: añade una URL de icono
+      });
+    } else {
+      console.warn('Notificaciones no permitidas por el usuario.');
+    }
+  }
 }
