@@ -1,22 +1,23 @@
-const admin = require('firebase-admin');
-const serviceAccount = require('./clave.json'); // Ajusta la ruta de tu clave privada JSON
+const admin = require('./firebaseAdmin');
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
+async function sendPushNotification(token, title, body) {
+  const message = {
+    token: token,
+    notification: {
+      title: title,
+      body: body,
+    },
+  };
 
-const message = {
-  notification: {
-    title: 'Hola!',
-    body: 'Este es un mensaje de prueba desde Firebase.',
-  },
-  token: 'fr5TVpOALxsfGvrKVVjF-V:APA91bG6uNM8bYvaxfxfoAuQospllDZ4X_tRZEJOkHuRwliPMEO4JzNjVTTvnFp_ejPifa8A-PIf9vdblvhXuT4pzBdzF7XpFN_o3K0yXCTjYxJBjrmM-H0', // Reemplaza con tu token del dispositivo
-};
+  try {
+    const response = await admin.messaging().send(message);
+    console.log('Mensaje enviado exitosamente:', response);
+  } catch (error) {
+    console.error('Error al enviar el mensaje:', error);
+  }
+}
 
-admin.messaging().send(message)
-  .then((response) => {
-    console.log('Mensaje enviado con éxito:', response);
-  })
-  .catch((error) => {
-    console.log('Error al enviar el mensaje:', error);
-  });
+// Token del dispositivo y datos de prueba
+const deviceToken = 'cIcHFB2gOXcb8fth4b9ovs:APA91bE0Dq5MFkN6rFK9GgAz62Tisz7Rb8pRT5EeRpj15WusETWItYCwlcgSLlKvEqaVoh-7_E7unAl_x-OioEL28f1OeBHTK9RIVsJUxoQBJgOTenLCSrk';
+sendPushNotification(deviceToken, 'Mensaje de Prueba', 'Notificación desde Firebase Admin SDK');
+
